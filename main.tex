@@ -19,9 +19,12 @@
 \usepackage{indentfirst}                % Пакет, чтобы починить красную строку
 \usepackage{listings}                   % Поддержка листингов, оформления кода программы
 
+\addto\captionsrussian{
+  \renewcommand{\figurename}{Рисунок}
+} 
 
 % Устанавливает отступы на странице
-\geometry{left=2cm, right=2cm, bottom=2cm, top=2cm}
+\geometry{left=30mm, right=15mm, top=20mm, bottom=20mm} % Стандартные поля ГОСТ
 
 % Настараиваем красивые цвета для ссылок на формулы, фигуры (изображения) и другие элементы.
 \hypersetup{
@@ -60,6 +63,9 @@
 
 \begin{document}
 
+\setcounter{page}{32}
+\setcounter{figure}{39}
+\setcounter{section}{2}
 
 \section{Фильтрация звука}
 
