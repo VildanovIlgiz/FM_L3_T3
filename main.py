@@ -161,3 +161,25 @@ else:
 
 y_out_int16 = (y_out * 32767).astype(np.int16)
 wavfile.write(output_wav_path, fs, y_out_int16)
+
+# ==========================================
+# 11. Сравнение Фурье-образов до и после фильтрации
+# ==========================================
+plt.figure(figsize=(12, 6))
+
+plt.plot(freqs, Y_mag, linewidth=1.0, alpha=0.85, label=r"$\hat{f}(\nu)$")
+plt.plot(freqs, Yf_mag, linewidth=1.0, alpha=0.85, label=r"$\hat{f}_{filtered}(\nu)$")
+
+plt.xlim(0, 4000)
+plt.xlabel("ν, Гц")
+plt.ylabel(r"$|\hat{f}(ν)|$")
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+
+plt.savefig(
+    os.path.join(FIG_DIR, "fft_compare_0_4000.png"),
+    dpi=300,
+    bbox_inches="tight"
+)
+plt.close()
